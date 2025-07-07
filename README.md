@@ -1,78 +1,163 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19903068&assignment_repo_type=AssignmentRepo)
-# Real-Time Chat Application with Socket.io
+Real-Time Chat Application with Socket.io
+This project implements a real-time chat application using React for the frontend and Node.js with Express and Socket.io for the backend. It features bidirectional communication, user presence, multiple chat rooms, private messaging, typing indicators, and read receipts.
 
-This assignment focuses on building a real-time chat application using Socket.io, implementing bidirectional communication between clients and server.
+Table of Contents
+Features
 
-## Assignment Overview
+Project Structure
 
-You will build a chat application with the following features:
-1. Real-time messaging using Socket.io
-2. User authentication and presence
-3. Multiple chat rooms or private messaging
-4. Real-time notifications
-5. Advanced features like typing indicators and read receipts
+Getting Started
 
-## Project Structure
+Prerequisites
 
-```
+Installation
+
+Running the Application
+
+Advanced Features Implemented
+
+Screenshots
+
+Submission Notes
+
+Resources
+
+Features
+This application includes the following core and advanced features:
+
+Real-time Messaging: Instant message delivery between users in shared chat rooms.
+
+User Authentication & Presence: Users can join rooms with a chosen username. The application displays a list of active users in the current room, indicating their presence.
+
+Multiple Chat Rooms: Users can join different public chat rooms.
+
+Private Messaging: Users can initiate one-on-one private conversations with other online users.
+
+Real-time Notifications: Users are notified when others join or leave a room.
+
+Typing Indicators: Displays when another user in the same chat (room or private) is actively typing a message.
+
+Read Receipts: Provides visual confirmation (double checkmark) when your messages have been read by other participants.
+
+Project Structure
 socketio-chat/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # UI components
-│   │   ├── context/        # React context providers
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── pages/          # Page components
-│   │   ├── socket/         # Socket.io client setup
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Node.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Socket event handlers
-│   ├── models/             # Data models
-│   ├── socket/             # Socket.io server setup
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+├── client/           # React front-end
+│   ├── public/       # Static files (index.html, manifest.json)
+│   ├── src/          # React source code
+│   │   ├── components/ # UI components
+│   │   ├── context/    # React context providers (empty, but structured for future use)
+│   │   ├── hooks/      # Custom React hooks (empty, but structured for future use)
+│   │   ├── pages/      # Page components (empty, but structured for future use)
+│   │   ├── socket/     # Socket.io client setup (socket.js - currently unused, but present)
+│   │   ├── App.jsx     # Main application component
+│   │   ├── index.js    # React app entry point
+│   │   └── index.css   # Tailwind CSS imports and custom styles
+│   └── package.json    # Client dependencies
+│   └── tailwind.config.js # Tailwind CSS configuration
+├── server/           # Node.js back-end
+│   ├── config/       # Configuration files (empty, but structured for future use)
+│   ├── controllers/  # Socket event handlers (empty, but structured for future use)
+│   ├── models/       # Data models (empty, but structured for future use)
+│   ├── socket/       # Socket.io server setup (empty, but structured for future use)
+│   ├── utils/        # Utility functions (empty, but structured for future use)
+│   ├── server.js     # Main server file
+│   └── package.json    # Server dependencies
+└── README.md         # Project documentation
 
-## Getting Started
+Getting Started
+Follow these instructions to set up and run the application on your local machine.
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week5-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+Prerequisites
+Node.js (v18 or higher recommended)
 
-## Files Included
+npm or pnpm (pnpm was used during development)
 
-- `Week5-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Socket.io configuration templates
-  - Sample components for the chat interface
+A modern web browser
 
-## Requirements
+Installation
+Clone the repository:
+If you haven't already, clone your GitHub Classroom repository. The root folder name will be similar to week-5-web-sockets-assignment-3-Stax.
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Basic understanding of React and Express
+git clone <your-repository-url>
+cd week-5-web-sockets-assignment-3-Stax
 
-## Submission
+Navigate to the server directory and install dependencies:
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+cd server
+# Clean up previous installations (optional, but recommended for a fresh start)
+rm -rf node_modules
+rm pnpm-lock.yaml # or yarn.lock / package-lock.json if you use npm/yarn
+pnpm install # or npm install / yarn install
 
-1. Complete both the client and server portions of the application
-2. Implement the core chat functionality
-3. Add at least 3 advanced features
-4. Document your setup process and features in the README.md
-5. Include screenshots or GIFs of your working application
-6. Optional: Deploy your application and add the URLs to your README.md
+Navigate to the client directory and install dependencies:
 
-## Resources
+cd ../client
+# Clean up previous installations (optional, but recommended for a fresh start)
+rm -rf node_modules
+rm pnpm-lock.yaml # or yarn.lock / package-lock.json if you use npm/yarn
+pnpm install # or npm install / yarn install
 
-- [Socket.io Documentation](https://socket.io/docs/v4/)
-- [React Documentation](https://react.dev/)
-- [Express.js Documentation](https://expressjs.com/)
-- [Building a Chat Application with Socket.io](https://socket.io/get-started/chat) 
+Running the Application
+You will need two separate terminal windows for the server and the client.
+
+Start the Server:
+Open your first terminal window, navigate to the server directory, and run:
+
+cd week-5-web-sockets-assignment-3-Stax/server
+pnpm start # or npm start / node server.js
+
+You should see Server running on port 5000. Keep this terminal open.
+
+Start the Client:
+Open your second terminal window, navigate to the client directory, and run:
+
+cd week-5-web-sockets-assignment-3-Stax/client
+pnpm start # or npm start
+
+This will open the React application in your browser, usually at http://localhost:3000. Keep this terminal open.
+
+Test the Chat:
+
+Open http://localhost:3000 in your browser.
+
+Enter a username and a room name (e.g., "Alice", "General"). Click "Join Chat".
+
+Open another browser tab or an incognito window and navigate to http://localhost:3000 again.
+
+Enter a different username (e.g., "Bob") and the same room name ("General"). Click "Join Chat".
+
+You can now send messages between Alice and Bob in the "General" room.
+
+To test private messaging, click on a user's name in the "Users in [Room Name]" list.
+
+Advanced Features Implemented
+As per the assignment requirements, the following advanced features have been implemented:
+
+Typing Indicators: Users can see when another user is actively typing in the same chat room or private conversation.
+
+Read Receipts: Sent messages display a single checkmark when delivered and a double checkmark when read by the recipient(s).
+
+Private Messaging: Users can select another online user from the user list to initiate a private, one-on-one chat.
+
+Screenshots
+(Placeholder for screenshots of your working application)
+
+Screenshot 1: Login/Join Room Screen
+
+Screenshot 2: Public Chat Room with multiple users and messages
+
+Screenshot 3: Private Chat window
+
+Screenshot 4: Typing indicator in action
+
+Screenshot 5: Read receipts on messages
+
+
+Resources
+Socket.io Documentation
+
+React Documentation
+
+Express.js Documentation
+
+Tailwind CSS Documentation
